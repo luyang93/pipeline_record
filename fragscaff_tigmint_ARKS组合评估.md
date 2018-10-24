@@ -200,7 +200,7 @@ Non-gapped Ns Count:  0
 # 评估分析
 根据tigmint的算法,将10X的linked reads数据分组成molecules,molecules覆盖度少的区域是潜在的错误组装.
 通过breakpoint的数量来评价无参基因组装的质量.
-
+### 10X
 | 组装方案  | breakpoint |
 | - | - | 
 | fragscaff | 10 |
@@ -208,11 +208,21 @@ Non-gapped Ns Count:  0
 | tigmint+ARKS | 0 |
 | ARKS | 8 |
 | origin | 8 |
-
+### Hi-C
+| 组装方案  | breakpoint |
+| - | - | 
+| fragscaff | 2 |
+| tigmint+fragscaff | 4 |
+| tigmint+ARKS | ？ |
+| ARKS | 2 |
+| origin | ？ |
 ## 统计breakpoint
+### 10X
 ![breakpoint](https://www.github.com/luyang93/gitimg/raw/master/2018/10/图片1.png "breakpoint")
 ``` shell
 segment=$(awk '{print $4}' draft.tigmint.fa.bed | grep '-' | wc -l)
 line=$(awk '{print $4}' draft.tigmint.fa.bed | grep '-' | grep -f - draft.tigmint.fa.bed | awk  '{print $1}' | uniq | wc -l)
 expr $segment - $line
 ```
+### Hi-C
+根据输出的breakpoints_iteration_*.txt来计算misassemblies
