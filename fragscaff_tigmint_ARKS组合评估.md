@@ -209,13 +209,13 @@ Non-gapped Ns Count:  0
 | ARKS | 8 |
 | origin | 8 |
 ### Hi-C
-| 组装方案  | breakpoint |
-| - | - | 
-| fragscaff | 2 |
-| tigmint+fragscaff | 4 |
-| tigmint+ARKS | ？ |
-| ARKS | 2 |
-| origin | ？ |
+| 组装方案  | input_breaks | breakpoints_iteration_2 | breakpoints_iteration_3 | breakpoints_iteration_4 | breakpoints_iteration_5 |
+| - | - | - | - | - | - |
+| fragscaff | 84 | 323 | 112 | 72 | 41 |
+| tigmint+fragscaff | 88 | 325 | 106 | 52 | 41 |
+| tigmint+ARKS |  |  |  |  |  |
+| ARKS | 65 | 453 |169 | 83 | 78 |
+| origin |  |  |  |  |  |  |
 ## 统计breakpoint
 ### 10X
 ![breakpoint](https://www.github.com/luyang93/gitimg/raw/master/2018/10/图片1.png "breakpoint")
@@ -225,4 +225,7 @@ line=$(awk '{print $4}' draft.tigmint.fa.bed | grep '-' | grep -f - draft.tigmin
 expr $segment - $line
 ```
 ### Hi-C
-根据输出的breakpoints_iteration_*.txt来计算misassemblies
+根据输出的input_breaks和breakpoints_iteration_*.txt来计算misassemblies
+``` shell
+wc input_breaks breakpoints_iteration_*.txt | awk '{print $2 - $1}'
+```
