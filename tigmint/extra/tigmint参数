@@ -1,0 +1,64 @@
+$tigmint-molecule  -h
+usage: tigmint-molecule [-h] [--version] [-o FILE] [-w FILE] [--bed] [--tsv]
+                        [-d N] [-m N] [-q N] [-a N] [-n N] [-s N]
+                        BAM
+
+Group linked reads into molecules. Read a SAM/BAM file and output a TSV file.
+The SAM/BAM file must be sorted by BX tag and then by position.
+
+positional arguments:
+  BAM                   Input BAM file sorted by BX tag then position, - for
+                        stdin
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -o FILE, --output FILE
+                        Output TSV file [stdout]
+  -w FILE, --out-bam FILE
+                        Output BAM file with MI tags (optional)
+  --bed                 Output in BED format [default]
+  --tsv                 Output in TSV format
+  -d N, --dist N        Maximum distance between reads in the same molecule
+                        [50000]
+  -m N, --reads N       Minimum number of reads per molecule (duplicates are
+                        filtered out) [4]
+  -q N, --mapq N        Minimum mapping quality [0]
+  -a N, --as-ratio N    Minimum ratio of alignment score (AS) over read length
+                        [0.65]
+  -n N, --nm N          Maximum number of mismatches (NM) [5]
+  -s N, --size N        Minimum molecule size [2000]
+
+
+
+$tigmint-cut --help
+usage: tigmint-cut [-h] [--version] -o FASTAOUT [-b BEDOUT] [-p PROCESSES]
+                   [-w WINDOW] [-n SPANNING] [-t TRIM]
+                   fasta bed
+
+Find misassembled regions in assembly using Chromium molecule extents
+
+positional arguments:
+  fasta                 Reference genome fasta file (must have FAI index
+                        generated)
+  bed                   Sorted bed file of molecule extents
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -o FASTAOUT, --fastaout FASTAOUT
+                        The output FASTA file.
+  -b BEDOUT, --bedout BEDOUT
+                        The output BED file. Default is the output FASTA
+                        filename plus .bed
+  -p PROCESSES, --processes PROCESSES
+                        Number of parallel processes to launch [8]
+  -w WINDOW, --window WINDOW
+                        Window size used to check for spanning molecules (bp)
+                        [1000]
+  -n SPANNING, --spanning SPANNING
+                        Spanning molecules threshold (no misassembly in window
+                        if num. spanning molecules >= n [2])
+  -t TRIM, --trim TRIM  Number of base pairs to trim at contig cuts (bp) [0]
+
+

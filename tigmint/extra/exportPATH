@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+export PATH=/ifs/TJPROJ3/RAD/luyang/SOFTWARE/miniconda3/envs/tigmint/bin:$PATH
+export PATH=/ifs/TJPROJ3/RAD/luyang/SOFTWARE/tigmint/bin:$PATH
+export PATH=/ifs/TJPROJ3/RAD/luyang/SOFTWARE/ARCS/bin:$PATH
+export PATH=/ifs/TJPROJ3/RAD/luyang/SOFTWARE/ARKS/bin:$PATH
+export PATH=/ifs/TJPROJ3/Plant/wangruiru/software/longranger-2.1.2/longranger-cs/2.1.2/bin:$PATH
+export LD_LIBRARY_PATH=/is/TJPROJ3/RAD/luyang/SOFTWARE/miniconda3/envs/tigmint/lib:$LD_LIBRARY_PATH
