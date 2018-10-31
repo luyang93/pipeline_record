@@ -56,16 +56,20 @@ grammar_cjkRuby: true
 - 拷贝流程至项目文件,编辑环境变量文件,设置相关参数
 ```
 cp /ifs/TJPROJ3/RAD/luyang/PIPELINE/tigmint -r path/to/project
-vim path/to/project/tigmint/env.cfg
-bash path/to/project/tigmint/prepare_script.sh
+vim path/to/project/env.cfg
+bash path/to/project/prepare_script.sh
 ```
 - 运行run_pipeline.sh提交任务
 ```
-bash path/to/project/tigmint/run_pipeline.sh
+bash path/to/project/run_pipeline.sh
 ```
 - 删除中间数据,节省存储空间
 ```
-bash path/to/project/tigmint/delete.sh
+bash path/to/project/delete.sh
+```
+- 输出结果
+```
+path/to/project/tigmint/draft.tigmint.fa
 ```
 4. 参数说明
 ```
