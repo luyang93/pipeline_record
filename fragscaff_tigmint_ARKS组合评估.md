@@ -211,11 +211,11 @@ Non-gapped Ns Count:  0
 ### Hi-C
 | 组装方案  | input_breaks | breakpoints_iteration_2 | breakpoints_iteration_3 | breakpoints_iteration_4 | breakpoints_iteration_5 |
 | - | - | - | - | - | - |
-| fragscaff | 84 | 323 | 112 | 72 | 41 |
-| tigmint+fragscaff | 88 | 325 | 106 | 52 | 41 |
-| tigmint+ARKS |  |  |  |  |  |
-| ARKS | 65 | 453 |169 | 83 | 78 |
-| origin |  |  |  |  |  |  |
+| fragscaff | 84 | 323 | 112 | 72 | 41 | 1r
+| tigmint+fragscaff | 88 | 325 | 106 | 52 | 41 | 1r
+| tigmint+ARKS | 65 | 455 | 125 | 85 | 105 | √
+| ARKS | 65 | 453 |169 | 83 | 78 | 1r
+| origin | 50 | 600 | 225 | 88 | 47 | √
 ## 统计breakpoint
 ### 10X
 ![breakpoint](https://www.github.com/luyang93/gitimg/raw/master/2018/10/图片1.png "breakpoint")
