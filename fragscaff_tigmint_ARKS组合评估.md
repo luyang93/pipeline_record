@@ -94,24 +94,6 @@ Max    |          10,668,331 |          10,614,412
 n50    |           2,414,574 |           2,395,696
 n90    |             758,348 |             758,348
 
-Contigs | withNs | withoutNs
--: | -: | -:
-Seqs   |                 844 |
-Total  |         609,144,668 |         609,144,668
-Max    |           4,134,085 |           4,134,085
-n50    |           1,045,551 |           1,045,551
-n90    |             392,397 |             392,397
-
-| | Gaps
--: | -: 
-Seqs   |                 432 |
-Total  |           2,624,173
-Max    |               7,973
-n50    |               6,489
-n90    |               4,500
-
-Non-gapped Ns Count:  0
-
 ----------------------------------------
 ## tigmint+fragscaff
 Scaffolds | withGaps | withoutGaps
@@ -121,24 +103,6 @@ Total  |         611,799,396 |         609,144,644
 Max    |          10,668,328 |          10,614,412
 n50    |           2,413,918 |           2,395,696
 n90    |             758,567 |             758,348
-
-Contigs | withNs | withoutNs
--: | -: | -:
-Seqs   |                 851 |
-Total  |         609,144,644 |         609,144,644
-Max    |           4,134,085 |           4,134,085
-n50    |           1,045,551 |           1,045,551
-n90    |             392,397 |             392,397
-
-| | Gaps
--: | -: 
-Seqs   |                 433 |
-Total  |           2,654,752
-Max    |               7,974
-n50    |               6,571
-n90    |               4,500
-
-Non-gapped Ns Count:  0 
 
 ----------------------------------------
 ## tigmint+ARKS
@@ -150,24 +114,6 @@ Max    |           6,483,884 |           6,483,684
 n50    |           1,455,412 |           1,455,312
 n90    |             516,064 |             516,064
 
-Contigs | withNs | withoutNs
--: | -: | -:
-Seqs   |                 852 |
-Total  |         609,144,668 |         609,144,668
-Max    |           4,134,085 |           4,134,085
-n50    |           1,045,551 |           1,045,551
-n90    |             392,397 |             392,397
-
-| | Gaps
--: | -: 
-Seqs   |                 198 |
-Total  |              19,800
-Max    |                 100
-n50    |                 100
-n90    |                 100
-
-Non-gapped Ns Count:  0 
-
 ----------------------------------------
 ## ARKS
 Scaffolds | withGaps | withoutGaps
@@ -177,24 +123,6 @@ Total  |        609,164,468 |        609,144,668
 Max    |          6,483,884 |          6,483,684
 n50    |          1,455,412 |          1,455,312
 n90    |            516,064 |            516,064
-
-Contigs | withNs | withoutNs
--: | -: | -:
-Seqs   |                844 |
-Total  |        609,144,668 |        609,144,668
-Max    |          4,134,085 |          4,134,085
-n50    |          1,045,551 |          1,045,551
-n90    |            392,397 |            392,397
-
-| | Gaps
--: | -: 
-Seqs   |                198 |
-Total  |             19,800
-Max    |                100
-n50    |                100
-n90    |                100
-
-Non-gapped Ns Count:  0 
 
 ----------------------------------------
 # 评估分析
@@ -225,7 +153,58 @@ line=$(awk '{print $4}' draft.tigmint.fa.bed | grep '-' | grep -f - draft.tigmin
 expr $segment - $line
 ```
 ### Hi-C
-根据输出的input_breaks和breakpoints_iteration_*.txt来计算misassemblies
+根据输出的input_breaks和breakpoints_iteration_\*.txt来计算misassemblies
 ``` shell
 wc input_breaks breakpoints_iteration_*.txt | awk '{print $2 - $1}'
 ```
+
+## 调整repeat_area
+### norepeats
+Scaffolds | withGaps | withoutGaps
+-: | -: | -:
+Seqs   |         450 |
+Total  | 611,706,825 | 609,144,668
+Max    |   7,031,421 |   6,957,049
+n50    |   2,159,651 |   2,141,919
+n90    |     697,263 |     694,652
+
+----------------------------------------
+### blast
+269673793 repeat area(bp)
+
+Scaffolds | withGaps | withoutGaps
+-: | -: | -:
+Seqs   |                  412 |
+Total  |          611,792,719 |          609,144,668
+Max    |           10,670,357 |           10,614,412
+n50    |            2,414,574 |            2,395,696
+n90    |              758,348 |              758,348
+
+----------------------------------------
+![blast](https://www.github.com/luyang93/gitimg/raw/master/2018/11/blast.png "blast")
+### blast filter < 500
+254128691 repeat area(bp)
+
+Scaffolds | withGaps | withoutGaps
+-: | -: | -:
+Seqs   |                  399 |
+Total  |          611,849,820 |          609,144,668
+Max    |           10,844,098 |           10,792,017
+n50    |            2,386,748 |            2,378,272
+n90    |              808,838 |              803,772
+
+----------------------------------------
+![blast_filter](https://www.github.com/luyang93/gitimg/raw/master/2018/11/2018年11月16日09:54:04.png "blast_filter")
+### blast fliter < 500 + start-end 10k merge
+560988475 repeat area(bp)
+
+Scaffolds | withGaps | withoutGaps
+-: | -: | -:
+Seqs   |                 829 |
+Total  |         609,253,094 |         609,144,668
+Max    |           4,134,085 |           4,134,085
+n50    |           1,058,044 |           1,058,044
+n90    |             393,839 |             393,839
+
+----------------------------------------
+![blast_fliter_expand](https://www.github.com/luyang93/gitimg/raw/master/2018/11/2018年11月16日09:57:33.png "blast_fliter_expand")
