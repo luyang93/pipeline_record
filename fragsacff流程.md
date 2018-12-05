@@ -126,7 +126,7 @@ sge_fragscaff_s3 = -l vf=8g,p=1 -P aliyun
 -q 10	alignment最小质量值，先前已经处理，已经注释，参数无效
 ![enter description here](https://www.github.com/luyang93/gitimg/raw/master/2018/12/1543993304203.png)
 
-	2. fragscaff_s2
+2. fragscaff_s2
 
 -d 0.05	根据node上groupID的数量，过滤前5%
 -D 0.95	根据node上groupID的数量，过滤前95%
@@ -143,7 +143,7 @@ sge_fragscaff_s3 = -l vf=8g,p=1 -P aliyun
 -M 200	link最大质量值，大于M，都调低至M
 ![enter description here](https://www.github.com/luyang93/gitimg/raw/master/2018/12/1543993352404.png)
 
-	3. fragscaff_s3
+3. fragscaff_s3
 
 -V A	输出所有的graph files
 -p A	A自动确定，最终确定使用的，link最小质量值
