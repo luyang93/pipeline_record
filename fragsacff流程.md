@@ -116,6 +116,7 @@ sge_fragscaff_s3 = -l vf=8g,p=1 -P aliyun
 ```
 5. 参数说明
 	1. fragscaff_s1
+
 -b 1	python预设，make bamParse then exit
 -B barcoded.bam	python预设
 -J Repeats.bed	python预设
@@ -126,6 +127,7 @@ sge_fragscaff_s3 = -l vf=8g,p=1 -P aliyun
 ![enter description here](https://www.github.com/luyang93/gitimg/raw/master/2018/12/1543993304203.png)
 
 	2. fragscaff_s2
+
 -d 0.05	根据node上groupID的数量，过滤前5%
 -D 0.95	根据node上groupID的数量，过滤前95%
 -l 5	node上link的数量的下限，取前l个link，不足就取完
@@ -142,6 +144,7 @@ sge_fragscaff_s3 = -l vf=8g,p=1 -P aliyun
 ![enter description here](https://www.github.com/luyang93/gitimg/raw/master/2018/12/1543993352404.png)
 
 	3. fragscaff_s3
+
 -V A	输出所有的graph files
 -p A	A自动确定，最终确定使用的，link最小质量值
 -L 100	fasta，每一行碱基数量
