@@ -154,7 +154,7 @@ fragscaff_r3 = -l vf=20g,p=1
 		```
 	6. 结果分析
 		- /HWNAS12/RAD/luyang/PROJECT/00.fragScaff/fragscaff.STAR/result.xlsx
-		- ![enter description here](https://www.github.com/luyang93/gitimg/raw/master/2019/1/1546395692239.png)
+		- ![enter description here](https://www.github.com/luyang93/gitimg/raw/master/2019/1/2019-01-23_13-39-27_创建的截图.png "2019-01-23 13-39-27 创建的截图")
 		- score值为所有参考值中都处于中段的评价，所有参考值不会太高也不会太低。
 	7. 拷贝转移相关结果
 	8. 删除数据
@@ -184,11 +184,17 @@ fragscaff_r3 = -l vf=20g,p=1
 		- python3(需包含pandas, numpy)
 		- perl
 	2. 环境
+		- 方法1
 		```shell
 		conda create -n fragScaff -y
 		source activate fragScaff
 		conda install pigz blast bedtools samtools star bowtie2 parallel
 		git clone https://github.com/RADnovogene/fragScaff.git
+		```
+		- 方法2
+		```shell
+		git clone https://github.com/RADnovogene/fragScaff.git
+		conda env create -f fragScaff.yaml
 		```
 	3. 修改env.cfg和fragscaff.sh
 		- fragscaff.sh中的绝对路径需要修改
