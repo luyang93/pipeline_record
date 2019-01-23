@@ -190,11 +190,13 @@ fragscaff_r3 = -l vf=20g,p=1
 		source activate fragScaff
 		conda install pigz blast bedtools samtools star bowtie2 parallel
 		git clone https://github.com/RADnovogene/fragScaff.git
+		补充python3环境(需包含pandas, numpy)
 		```
 		- 方法2
 		```shell
 		git clone https://github.com/RADnovogene/fragScaff.git
 		conda env create -f fragScaff.yaml
+		补充python3环境(需包含pandas, numpy)
 		```
 	3. 修改env.cfg和fragscaff.sh
 		- fragscaff.sh中的绝对路径需要修改
