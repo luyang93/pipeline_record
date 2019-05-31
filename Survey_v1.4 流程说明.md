@@ -131,3 +131,26 @@ DES02651_L2	350
 - 移除05.Report和xxxx_upload目录,以及待上传的压缩文件
 - 在工作目录下bash Survey.sh
 - 在工作目录下nohup bash nohup_run.sh &,运行投递流程
+
+# 流程结构
+- run:0
+	- survey
+![survey0](https://www.github.com/luyang93/gitimg/raw/master/2019/5/survey0.png)
+	- report
+![report0](https://www.github.com/luyang93/gitimg/raw/master/2019/5/report0.png)
+
+- run:1
+	- survey
+![survey1](https://www.github.com/luyang93/gitimg/raw/master/2019/5/survey1.png)
+	- report
+![report1](https://www.github.com/luyang93/gitimg/raw/master/2019/5/report1.png)
+
+- run:2
+	- survey
+![survey2](https://www.github.com/luyang93/gitimg/raw/master/2019/5/survey2.png)
+	- report
+![report2](https://www.github.com/luyang93/gitimg/raw/master/2019/5/report2.png)
+# 参考项目路径
+/ifs/TJPROJ3/HWUS/USER/luyang/PROJECT/01.survey/05.release
+/ifs/TJPROJ3/HWUS/USER/luyang/PROJECT/01.survey/04.snk
+/ifs/TJPROJ3/HWUS/USER/luyang/PROJECT/01.survey/06.run0
