@@ -201,3 +201,10 @@ fragscaff_r3 = -l vf=20g,p=1
 	3. 修改env.cfg和fragscaff.sh
 		- fragscaff.sh中的绝对路径需要修改
 		- env.cfg中的依赖的PATH需要修改
+9. 相对于前流程的改动
+	- 修正了原流程中的一个错误,https://github.com/adeylab/fragScaff/commit/3e1f983ae2733e7620e8a89b8019b34ceec3fd53
+	- 根据fragscaff的算法,以及大家的常用参数,旧流程中/ifs/TJPROJ3/Plant/Pipeline/10XG/bin/10XGscaff_v2.1  -fq danshen_10X/*.fq.gz    -genome curated.fasta_609M -maxCore 200 -fs1 '-m 3000 -q 30 -E 30000 -o 60000' -fs2 '-C 5' -fs3 '-j 1 -u 3'
+	- m参数代表在fragscaff中使用的最短contig,小于这个长度就会丢弃,如果想每条都使用,那就改配置文件中的filter_length为0.
+	- 由于很多比对结果,比如read比对到contig中间区域(相对于头尾)的结果在fragscaff中是直接不使用的,所以在输出比对结果的时候就预先做了过滤,减少mergebam以及后续读取bam的压力.
+	- 由于blast的比对速度,,contig自身比对自身,速度较慢,所以将contig切分,提取头尾进行比较,加快速度.
+	- read比对contig使用的是bowtie2/STAR,采用mate-pair的方式输入R1,R2
