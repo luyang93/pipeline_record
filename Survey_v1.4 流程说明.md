@@ -151,9 +151,11 @@ DES02651_L2	350
 	- report
 ![report2](https://www.github.com/luyang93/gitimg/raw/master/2019/5/report2.png)
 # 参考项目路径
+```
 /ifs/TJPROJ3/HWUS/USER/luyang/PROJECT/01.survey/05.release
 /ifs/TJPROJ3/HWUS/USER/luyang/PROJECT/01.survey/04.snk
 /ifs/TJPROJ3/HWUS/USER/luyang/PROJECT/01.survey/06.run0
+```
 # 背景链接
 https://run-survey.readthedocs.io/en/latest/computing_resource.html
 https://note.youdao.com/ynoteshare1/index.html?id=3066a675de28d98df83ba91addd3e718&type=note
