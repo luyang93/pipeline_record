@@ -104,19 +104,21 @@ qc_list
 DES02651_L1	350
 DES02651_L2	350
 ```
-- ['parameter']:指定了运行的参数
+
+
+- parameter:指定了运行的参数
 	- ['run']:控制了运行的三种需求,qc, qc + survey, qc + survey + assembly
 	- ['max_read_length']:read 长度
 	- ['survey_kmer']:survey kmer大小
 	- ['assembly_kmer']组装kmer大小
 - ['sge']:指定了提交任务的资源需求,列表中列出的为高资源任务,其余任务按照默认即可.按照 -l vf=200g,p=30 -P smp1024 -q tjsmp03_1024.q 填写,整体是一个字符串,不需要加-cwd, -V
-- ['report']:指定了报告中出现的一些内容:
-	- ['Quote_No']:引用编号
-	- ['Contract_No']:合同编号
-	- ['Contract_Name']:合同名称
-	- ['Title_Name']:鼠标悬停网页标签,展示的名称
-	- ['Project_principals']:出报告的部门
-	- ['Latin_Name']:'物种拉丁名'
+- report:指定了报告中出现的一些内容:
+	- Quote_No:引用编号
+	- Contract_No:合同编号
+	- Contract_Name:合同名称
+	- Title_Name:鼠标悬停网页标签,展示的名称
+	- Project_principals:出报告的部门
+	- Latin_Name:'物种拉丁名'
 # Run
 1. 从流程路径下(/ifs/TJPROJ3/HWUS/USER/luyang/PIPELINE/00.survey/v1.0)拷贝Survey.sh,env.cfg到工作目录.
 2. 在工作目录下编辑clean data路径文件.
